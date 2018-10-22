@@ -1,19 +1,19 @@
-variable "newvariable" {
+variable "vpc_name" {
   type = "string"
-  default = "thisvalue"
+  default = "environment-exaple-two"
 }
 
 variable "maptype" {
   type = "map"
   default = {
-    subnet1 = "kd-subnet-1"
-    subnet2 = "kd-subnet-2"
+    zone1 = "eu-west-1"
+    zone2 = "eu-west-2"
   }
 }
 
-variable "listtype" {
+variable "zones" {
   type = "list"
-  default = ["kd-subnet-1", "kd-subnet-2"]
+  default = ["eu-west-1", "eu-west-2"]
 }
 
 variable "coffee_type" {
@@ -21,13 +21,8 @@ variable "coffee_type" {
   description = "Identyfing coffee levels"
 }
 
-//output variables
-
-output "first_output" {
-  value = "this is value through execution"
+variable "aws_ip_cird_range" {
+  default = "11.0.0.0/16"
+  type = "string"
+  description = "IP CIRD range got AWS VPC"
 }
-
-output "aws_cidr_subnet1" {
-  value = "${var.maptype.subnet1}"
-}
-

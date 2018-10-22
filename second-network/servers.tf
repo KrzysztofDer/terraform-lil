@@ -22,5 +22,5 @@ resource "aws_instance" "server-01" {
     Name = "Identifiertag"
   }
 
-  subnet_id = "${aws_subnet.${var.listtype}}"
+  subnet_id = "${aws_subnet.subnet-1.id}"
 }
